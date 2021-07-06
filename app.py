@@ -15,7 +15,7 @@ modelH = pickle.load(open('Model/heart.pkl','rb'))
 modelB = pickle.load(open('Model/cancer.pkl','rb'))
 modelL = pickle.load(open('Model/liver.pkl','rb'))
 modelD = pickle.load(open('Model/diabetes_new.pkl','rb'))
-modelK = pickle.load(open('Model/Kidney.pkl','rb'))
+modelK = pickle.load(open('Model/kidney.pkl','rb'))
 
 
 
