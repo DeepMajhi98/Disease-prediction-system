@@ -1,0 +1,531 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kidney Disease Prediction Form</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="Kidney_Form_Style.css"> -->
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+.heart-pred{
+	position: relative;
+	min-height: 100vh;
+	padding: 50px 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-image: linear-gradient(rgba(4,9,30,0.6),rgba(4,9,30,0.6)),url('static/Kidney_form_img.jpg');	
+	background-size: cover;
+}
+
+
+
+
+/*-------------------Text Part-------------------*/
+.heart-pred .heart-content{
+	max-width: 400px;
+	text-align: center;
+
+}
+.heart-pred .heart-content h2{
+	font-size: 35px;
+	font-weight: 500;
+	color: #fff;
+}
+.heart-pred .heart-content p{
+	font-size: 20px;
+	font-weight: 300;
+	color: #fff;
+	
+}
+.heart-label-info{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+.heart-label-info .attribute-info{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+
+}
+.heart-label-info .attribute-info .heart-box{
+	position: relative;
+	padding: 10px 0;
+	display: flex;
+}
+.heart-label-info .attribute-info .heart-box .heart-icon{
+	min-width: 20px;
+	height: 20px;
+	background: #00ffff ;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size: 11px;
+}
+.heart-label-info .attribute-info .heart-box .heart-text{
+	display: flex;
+	margin-left: 20px;
+	font-size: 16px;
+	color: #fff;
+	flex-direction: column;
+	font-weight: 300;
+}
+.heart-label-info .attribute-info .heart-box .heart-text h3{
+	font-weight: 500;
+	color: #00ffff;
+}
+
+
+
+
+
+
+/*---------------------Form Part---------------------*/
+
+.heart-form{
+	width: 60%;
+	padding: 100px;
+	background: #333;
+	margin-left: 100px;
+	margin-top: 70px;
+}
+.heart-form h2{
+	font-size: 20px;
+	
+	font-weight: 600;               /*changes done*/
+	/*padding-top: 20px;*/
+	color: #00ffff
+
+}
+.heart-form .inputBox{
+	position: relative;
+	width: 100%;
+	margin-top: 20px;
+	color: #fff;
+
+}
+.heart-form .inputBox input{
+	width: 110%;
+	padding: 5px 0;
+    
+	font-size: 16px;
+	margin: 10px 0;
+	border: none;
+	border-bottom: 2px solid #00ffff;
+	outline: none;
+	resize: none;
+}
+.heart-form .inputBox input[type='text']{
+	background-color: #333;                       /*creativity*/
+}
+
+.heart-form .inputBox input[type='submit']{
+	width: 110%;
+	background: #00ffff;
+	color: #333;
+	font-weight: 600;	
+	border:none;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 18px;
+
+}
+
+.heart-form .inputBox input, select, textarea{
+    color: #fff;
+}
+
+.heart-form .inputBox text:focus, input:focus {
+    color: #fff;
+}
+.h1pd{
+	color: #fff;
+}
+
+
+
+
+
+
+
+/*working on button at the center*/
+.center-btn{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 15px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.center-btn:hover{         /*adding hover effect on the button*/
+  border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+
+
+.pd{
+	margin-top: 35px;
+	
+}
+
+
+
+
+@media (max-width: 991px)
+{
+	.heart-pred{
+		padding: 50px;
+	}
+	.heart-label-info{
+		flex-direction: column;
+	}
+	.heart-label-info .attribute-info{
+		margin-bottom: 40px;
+	}
+	.heart-label-info .attribute-info,.heart-form
+	{ 
+		width: 110%;
+
+	}
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+	<section class="heart-pred">
+
+		<div class="heart-content">
+			<h2>Predict Kidney Disease</h2>
+			<p>You can predict Kidney Disease with an accuracy of 100%</p>
+		<!-- 	<a href="{{ url_for('kidneyPage') }}"  class="center-btn">Click Here To See Data Visualizations</a> -->
+		</div>
+
+       <!-- Division for label information -->
+		<div class="heart-label-info">
+			<div class="attribute-info">
+
+               <!-- attribute info starts here -->
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Age</h3>
+						<p>age in years</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Blood Pressure</h3>
+						<p>bp in mm/Hg eg. (100,60,110,140)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Albumin</h3>
+						<p>eg. (0,1,2,3,4,5)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Sugar</h3>
+						<p>eg. (0,1,2,3,4,5)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Red Blood Cells</h3>
+						<p>eg. (normal = 0,abnormal = 1)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Pus Cell </h3>
+						<p>eg. (normal = 0,abnormal = 1)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Pus Cell Clumps</h3>
+						<p>eg. (present = 1,notpresent = 0)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Bacteria</h3>
+						<p>eg. (present = 1,notpresent = 0)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Blood Glucose Random</h3>
+						<p>bgr in mgs/dl eg. (423,117,106,74)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Blood Urea</h3>
+						<p>bu in mgs/dl eg. (28,155,33,39)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Serum Creatinine</h3>
+						<p>sc in mgs/dl eg. (1.2,1.8.2.7,11.5)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Potassium</h3>
+						<p>pot in mEq/L eg. (2.5,4.9,6.5)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>White Blood Cell Count</h3>
+						<p>wc in cells/cumm eg. (6000,10200,21600)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Hypertension</h3>
+						<p>eg. (yes = 1,no = 0)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Diabetes Mellitus</h3>
+						<p>eg. (yes = 1,no = 0)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Coronary Artery Disease</h3>
+						<p>eg. (yes = 1,no = 0)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Pedal Edema</h3>
+						<p>eg. (yes = 1,no = 0)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Anemia</h3>
+						<p>eg. (yes = 1,no = 0)</p>
+					</div>
+				</div>
+
+				
+
+
+			</div>
+
+			<!-- -----------------Form portion------------------->			
+			<div class="heart-form">
+				<form action="{{ url_for('predictKidney') }}" method="POST">
+
+					<div class="inputBox">
+						<h2>Age</h2>
+						<input type="text" name="age">
+					</div>
+
+					<div class="inputBox">
+						<h2>Blood Pressure</h2>
+						<input type="text" name="bp" >
+					</div>
+
+					<div class="inputBox">
+						<h2>Albumin</h2>
+						<input type="text" name="al" >
+					</div>
+
+					<div class="inputBox">
+						<h2>Sugar</h2>
+						<input type="text" name="su" >
+					</div>
+
+					<div class="inputBox">
+						<h2>Red Blood Cells</h2>
+						<input type="text" name="rbc">
+					</div>
+
+					<div class="inputBox">
+						<h2>Pus Cell</h2>
+						<input type="text" name="pc">
+					</div>
+
+					<div class="inputBox">
+						<h2>Pus Cell clumps</h2>
+						<input type="text" name="pcc">
+					</div>
+
+					<div class="inputBox">
+						<h2>Bacteria</h2>
+						<input type="text" name="ba">
+					</div>
+
+					<div class="inputBox">
+						<h2>Blood Glucose Random</h2>
+						<input type="text" name="bgr">
+					</div>
+
+					<div class="inputBox">
+						<h2>Blood Urea</h2>
+						<input type="text" name="bu">
+					</div>
+
+					<div class="inputBox">
+						<h2>Serum Creatinine</h2>
+						<input type="text" name="sc">
+					</div>
+
+					<div class="inputBox">
+						<h2>Potassium</h2>
+						<input type="text" name="pot">
+					</div>
+
+					<div class="inputBox">
+						<h2>White Blood Cell Count</h2>
+						<input type="text" name="wc">
+					</div>
+
+					<div class="inputBox">
+						<h2>Hypertension</h2>
+						<input type="text" name="htn">
+					</div>
+
+					<div class="inputBox">
+						<h2>Diabetes Mellitus</h2>
+						<input type="text" name="dm">
+					</div>
+
+					<div class="inputBox">
+						<h2>Coronary Artery Disease</h2>
+						<input type="text" name="cad">
+					</div>
+
+					<div class="inputBox">
+						<h2>Pedal Edema</h2>
+						<input type="text" name="pe">
+					</div>
+
+					<div class="inputBox">
+						<h2>Anemia</h2>
+						<input type="text" name="ane">
+					</div>
+
+					
+
+					
+
+					
+
+					<div class="inputBox">
+						<input type="submit" value="Predict">
+					</div>
+
+				</form>
+			</div>
+
+
+		</div>
+
+
+		<div class="pd">
+    	<center>
+    		<h1 style="color: #00ffff">{{ prediction_text }}</h1>
+    		
+    	</center>
+    </div>
+
+
+	</section>
+
+
+
+
+
+</body>
+</html>

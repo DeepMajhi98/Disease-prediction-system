@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name='viewport' content="with=device-width, initial-scale=1.0">      <!-- for making the website responsive -->
+	<title>Disease Prediction System</title>
+	
+
+
+
+
+
+<style type="text/css">
+  *{
+  margin: 0;
+  padding: 0;   /*applicable for all the HTML elements*/
+  font-family: 'Poppins', sans-serif;
+
+}
+
+/*working on background*/
+.header{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('static/home_img.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+
+/*working on menu bar*/
+nav{
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links{
+  flex: 1;
+  text-align: right;
+}
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px
+  position: relative;
+}
+.nav-links ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  padding-right:15px;
+  padding-left: 15px;
+}
+.nav-links ul li::after{      /* For hover effect of the nav links*/
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto; 
+  transition: 0.5s
+}
+.nav-links ul li:hover::after{
+  width: 70%;
+}
+
+
+/*working on text at the center*/
+.text-box{
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);  /*for making the text-box at the center of the div*/
+  text-align: center;
+}
+.text-box h1{
+  font-size: 62px;
+}
+.text-box p{
+  margin: 8px 0 10px;
+  font-size: 20px;
+  color: #fff;
+}
+
+
+
+/*working on button at the center*/
+.center-btn{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 15px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.center-btn:hover{         /*adding hover effect on the button*/
+  border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+
+
+
+/*hiding menu icons in full screen mode*/
+nav .fa{
+  display: none;
+}
+
+
+
+
+
+
+/*-----------------------HEART SECTION------------------------*/
+.row{
+  margin-top: 3%;
+  
+  display: flex;
+  justify-content: space-between;
+}
+.heart{
+  width: 80%;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+.heart-col{
+  flex-basis: 48%;
+  padding: 30px 2px;
+}
+.heart-col img{
+  width: 100%;
+}
+.heart-col h1{
+  padding-top: 0;
+}
+.heart-col p{
+  padding: 15px 0 25px;
+}
+.red-btn{
+  border: 1px solid #f44336;
+  background: transparent;
+  color: #f44336;
+}
+.red-btn:hover{
+  color: #fff;
+}
+
+
+
+
+
+
+/*-------------------Visualization_Home Page Styles-------------------*/
+
+@import
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.slider{
+  max-width: 100000px;
+  display: flex;
+}
+.slider .card{
+  background:#fff;
+  flex: 1;
+  margin: 0 10px;
+}
+.slider .card .img{
+  height:200px;
+  width: 100%;
+}
+.slider .card .img img{
+  height: 180px;
+  width: 110%;
+  Object-fit: cover;
+}
+.slider .card .content{
+  padding: 10px 20px;
+}
+.card .content .title{
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f0f0e;
+  line-height: 80px;
+} 
+.card .content .btn{
+  display: block;
+  text-align: left;
+  margin: 10px 5;
+}
+.card .content .btn button{
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size:17px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.card .content .btn button a{
+  text-decoration: none;
+  color: #fff;
+}
+.card .content .btn button:hover{
+  transform: scale(0.9);
+}
+
+
+
+/*making the website responsive*/
+
+@media(max-width: 700px){            /*code in this media query is applicable for device of width <= 700 pixel*/
+  
+  .text-box h1{
+    font-size: 20px;
+  }
+
+  .nav-links ul li{
+    display: block;
+  }
+  .nav-links{
+    position: absolute;
+    background: #f44336;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: 1s;
+  }
+  nav .fa{             /*making menu icons visible in the smaller devices*/
+    display: block;
+    color: #fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .nav-links ul{     /*adding spaces between menu links*/
+    padding: 30px;
+  }
+}     
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+     <section class="header">
+     
+     	<nav>
+     		<div class="nav-links" id='navLinks'>
+     			<i class="fa fa-times" onclick="hideMenu()"></i>   <!-- cross menu icon for small device [source: v4.7/icon/times] -->  
+     			<ul>
+     			    <li><a href="{{ url_for('home') }}">HOME</a></li>
+     				<li><a href="{{ url_for('heartPage') }}">Heart</a></li>
+     				<li><a href="{{ url_for('cancerPage') }}">Breast Cancer</a></li>
+     				<li><a href="{{ url_for('diabetesPage') }}">Diabetes</a></li>
+     				<li><a href="{{ url_for('kidneyPage') }}">Kidney</a></li>
+     				<li><a href="{{ url_for('liverPage') }}">Liver</a></li>
+
+
+     				
+     			</ul>
+     		</div>
+     		<i class="fa fa-bars" onclick="showMenu()"></i>    <!-- hamburger menu icon for small device [source: v4.7/icon/bars] -->
+     	</nav>
+
+ <div class="text-box">
+	<h1>Predict Diseases</h1>
+	<p>Explore the Data Visualizations</p>
+	<a href="*"  class="center-btn">Click Here </a>
+ </div>
+
+     </section>
+
+
+
+
+
+
+
+
+
+<!-------------------JavaScript for toggle Menu---------------->
+<script>
+	var navLinks = document.getElementById('navLinks')
+
+	function showMenu(){
+		navLinks.style.right = '0';		
+	}
+	function hideMenu(){
+		navLinks.style.right = "-200px";
+	}
+</script>
+<!-------------------------------------------------------------->
+
+
+
+
+
+
+</body>
+</html>

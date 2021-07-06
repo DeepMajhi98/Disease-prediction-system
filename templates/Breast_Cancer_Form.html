@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Breast Cancer Prediction Form</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="Breast_Form_Style.css"> -->
+
+
+
+
+
+<style>
+	
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+.heart-pred{
+	position: relative;
+	min-height: 100vh;
+	padding: 50px 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-image: linear-gradient(rgba(4,9,30,0.6),rgba(4,9,30,0.6)),url('static/Breast_img_form.jpg');	
+	background-size: cover;
+}
+
+
+
+
+/*-------------------Text Part-------------------*/
+.heart-pred .heart-content{
+	max-width: 400px;
+	text-align: center;
+
+}
+.heart-pred .heart-content h2{
+	font-size: 35px;
+	font-weight: 500;
+	color: #fff;
+}
+.heart-pred .heart-content p{
+	font-size: 20px;
+	font-weight: 300;
+	color: #fff;
+	
+}
+.heart-label-info{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+.heart-label-info .attribute-info{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+
+}
+.heart-label-info .attribute-info .heart-box{
+	position: relative;
+	padding: 10px 0;
+	display: flex;
+}
+.heart-label-info .attribute-info .heart-box .heart-icon{
+	min-width: 20px;
+	height: 20px;
+	background: #00ffff ;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size: 11px;
+}
+.heart-label-info .attribute-info .heart-box .heart-text{
+	display: flex;
+	margin-left: 20px;
+	font-size: 16px;
+	color: #fff;
+	flex-direction: column;
+	font-weight: 300;
+}
+.heart-label-info .attribute-info .heart-box .heart-text h3{
+	font-weight: 500;
+	color: #00ffff;
+}
+
+
+
+
+
+
+/*---------------------Form Part---------------------*/
+
+.heart-form{
+	width: 60%;
+	padding: 100px;
+	background: #333;
+	margin-left: 100px;
+	margin-top: 70px;
+}
+.heart-form h2{
+	font-size: 20px;
+	
+	font-weight: 600;               /*changes done*/
+	/*padding-top: 20px;*/
+	color: #00ffff
+
+}
+.heart-form .inputBox{
+	position: relative;
+	width: 100%;
+	margin-top: 20px;
+	color: #fff;
+
+}
+.heart-form .inputBox input{
+	width: 110%;
+	padding: 5px 0;
+    
+	font-size: 16px;
+	margin: 10px 0;
+	border: none;
+	border-bottom: 2px solid #00ffff;
+	outline: none;
+	resize: none;
+}
+.heart-form .inputBox input[type='text']{
+	background-color: #333;                       /*creativity*/
+}
+
+.heart-form .inputBox input[type='submit']{
+	width: 110%;
+	background: #00ffff;
+	color: #333;
+	font-weight: 600;	
+	border:none;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 18px;
+
+}
+
+.heart-form .inputBox input, select, textarea{
+    color: #fff;
+}
+
+.heart-form .inputBox text:focus, input:focus {
+    color: #fff;
+}
+.h1pd{
+	color: #fff;
+}
+
+
+
+
+
+
+
+/*working on button at the center*/
+.center-btn{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 15px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  margin-top: 25px;
+}
+.center-btn:hover{         /*adding hover effect on the button*/
+  border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+
+
+.pd{
+	margin-top: 35px;
+	
+}
+
+
+
+
+@media (max-width: 991px)
+{
+	.heart-pred{
+		padding: 50px;
+	}
+	.heart-label-info{
+		flex-direction: column;
+	}
+	.heart-label-info .attribute-info{
+		margin-bottom: 40px;
+	}
+	.heart-label-info .attribute-info,.heart-form
+	{ 
+		width: 110%;
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+	<section class="heart-pred">
+
+		<div class="heart-content">
+			<h2>Predict Breast Cancer</h2>
+			<p>You can predict Breast Cancer with an accuracy of 99%</p>
+<!-- 			<a href="{{ url_for('cancerPage') }}"  class="center-btn">Click Here To See Data Visualizations</a> -->
+		</div>
+
+       <!-- Division for label information -->
+		<div class="heart-label-info">
+			<div class="attribute-info">
+
+           
+
+               <!-- attribute info starts here -->
+
+               <div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Radius Mean</h3>
+						<p>eg. (11.64,12.45,13.71,19.27)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Texture Mean</h3>
+						<p>eg. (0.38,17.77,21.25,20.38)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Perimeter Mean</h3>
+						<p>eg. (83.97,96.73,100.2,129.1)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Area Mean</h3>
+						<p>eg. (477.1,684.5,1094,1264)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Smoothness Mean</h3>
+						<p>eg. (0.09474,0.09378,0.1137,0.1215)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Compactness Mean</h3>
+						<p>eg. (0.05943,0.09092,0.1479,0.2776)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Concavity Mean</h3>
+						<p>eg. (0.07395,0.1639,0.198,0.3001)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Symmetry Mean</h3>
+						<p>eg. (0.1794,0.192,0.2169,0.2398)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Radius_se</h3>
+						<p>eg. (0.2976,0.4956,0.8068,1.215)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Perimeter_se</h3>
+						<p>eg. (1.545,2.217,8.589,11.07)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Area_se</h3>
+						<p>eg. (31.33,74.08,112.4,134.8)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>compactness_se</h3>
+						<p>eg. (0.04904,0.01308,0.04006,0.07458)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Concavity_se</h3>
+						<p>eg. (0.05373,0.0186,0.03832,0.05661)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Concave Points_se</h3>
+						<p>eg. (0.01587,0.0134,0.02058,0.01867)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Fractal Dimension_se</h3>
+						<p>eg. (0.006193,0.003532,0.004571,0.009208)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Radius Worst</h3>
+						<p>eg. (25.38,24.99,23.57,14.91)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Texture Worst</h3>
+						<p>eg. (17.33,23.41,25.53,26.5)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Perimeter Worst</h3>
+						<p>eg. (184.6,158.8,152.5,98.87)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Area Worst</h3>
+						<p>eg. (2019,1956,1709,567.7)</p>    <!-- check -->
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Smoothness Worst</h3>
+						<p>eg. (0.1622,0.1238,0.1444,0.2098)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Compactness Worst</h3>
+						<p>eg. (0.6656,0.1866,0.4245,0.8663)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Concavity Worst</h3>
+						<p>eg. (0.7119,0.2416,0.4504,0.6869)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Concave Points Worst</h3>
+						<p>eg. (0.2654,0.186,0.243,0.2575)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Symmetry Worst</h3>
+						<p>eg. (0.4601,0.275,0.3613,0.6638)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Fractal Dimension Worst</h3>
+						<p>eg. (0.1189,0.08902,0.08758,0.173)</p>
+					</div>
+				</div>
+
+
+
+				
+
+
+			</div>
+
+			<!-- -----------------Form portion------------------->			
+			<div class="heart-form">
+				<form action="{{ url_for('predictBC') }}" method="POST">
+
+					<div class="inputBox">
+						<h2>radius_mean</h2>
+						<input type="text" name="radius_mean">
+					</div>
+
+					<div class="inputBox">
+						<h2>texture_mean</h2>
+						<input type="text" name="texture_mean">
+					</div>
+
+					<div class="inputBox">
+						<h2>perimeter_mean</h2>
+						<input type="text" name="perimeter_mean">
+					</div>
+
+					<div class="inputBox">
+						<h2>area_mean</h2>
+						<input type="text" name="area_mean" >
+					</div>
+
+					<div class="inputBox">
+						<h2>smoothness_mean</h2>
+						<input type="text" name="smoothness_mean">
+					</div>
+
+					<div class="inputBox">
+						<h2>compactness_mean</h2>
+						<input type="text" name="compactness_mean">
+					</div>
+
+					<div class="inputBox">
+						<h2>concavity_mean</h2>
+						<input type="text" name="concavity_mean">
+					</div>
+
+					<div class="inputBox">
+						<h2>concave_points_mean</h2>
+						<input type="text" name="concave_points_mean">
+					</div>
+
+					<div class="inputBox">
+						<h2>symmetry_mean</h2>
+						<input type="text" name="symmetry_mean">
+					</div>
+
+					<div class="inputBox">
+						<h2>radius_se</h2>
+						<input type="text" name="radius_se">
+					</div>
+
+					<div class="inputBox">
+						<h2>perimeter_se</h2>
+						<input type="text" name="perimeter_se">
+					</div>
+
+					<div class="inputBox">
+						<h2>area_se</h2>
+						<input type="text" name="area_se">
+					</div>
+
+					<div class="inputBox">
+						<h2>compactness_se</h2>
+						<input type="text" name="compactness_se">
+					</div>
+
+					<div class="inputBox">
+						<h2>Concavity_se</h2>
+						<input type="text" name="concavity_se">
+					</div>
+
+					<div class="inputBox">
+						<h2>concave points_se</h2>
+						<input type="text" name="concave points_se">
+					</div>
+
+					<div class="inputBox">
+						<h2>fractal_dimension_se</h2>
+						<input type="text" name="fractal_dimension_se">
+					</div>
+
+					<div class="inputBox">
+						<h2>radius_worst</h2>
+						<input type="text" name="radius_worst">
+					</div>
+
+					<div class="inputBox">
+						<h2>texture_worst</h2>
+						<input type="text" name="texture_worst">
+					</div>
+
+					<div class="inputBox">
+						<h2>perimeter_worst</h2>
+						<input type="text" name="perimeter_worst">
+					</div>
+
+					<div class="inputBox">
+						<h2>area_worst</h2>
+						<input type="text" name="area_worst">
+					</div>
+
+					<div class="inputBox">
+						<h2>smoothness_worst</h2>
+						<input type="text" name="smoothness_worst">
+					</div>
+
+					<div class="inputBox">
+						<h2>compactness_worst</h2>
+						<input type="text" name="compactness_worst">
+					</div>
+
+					<div class="inputBox">
+						<h2>concavity_worst</h2>
+						<input type="text" name="concavity_worst">
+					</div>
+
+					<div class="inputBox">
+						<h2>concave points_worst</h2>
+						<input type="text" name="concave points_worst">
+					</div>
+
+					<div class="inputBox">
+						<h2>symmetry_worst</h2>
+						<input type="text" name="symmetry_worst">
+					</div>
+
+					<div class="inputBox">
+						<h2>fractal_dimension_worst</h2>
+						<input type="text" name="fractal_dimension_worst">
+					</div>
+
+
+
+					<div class="inputBox">
+						<input type="submit" value="Predict">
+					</div>
+
+				</form>
+			</div>
+
+
+		</div>
+
+
+
+		<div class="pd">
+    	<center>
+    		<h1 style="color: #00ffff">{{ prediction_text }}</h1>
+    		
+    	</center>
+    </div>
+		  
+
+
+	</section>
+
+
+
+
+
+</body>
+</html>

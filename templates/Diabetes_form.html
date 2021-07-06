@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Diabetes Prediction Form</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="Diabetes_Form_Style.css"> -->
+
+
+
+
+<style >
+	
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+.heart-pred{
+	position: relative;
+	min-height: 100vh;
+	padding: 50px 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-image: linear-gradient(rgba(4,9,30,0.6),rgba(4,9,30,0.6)),url('static/Diabetes_img_form.jpeg');	
+	background-size: cover;
+}
+
+
+
+
+/*-------------------Text Part-------------------*/
+.heart-pred .heart-content{
+	max-width: 400px;
+	text-align: center;
+
+}
+.heart-pred .heart-content h2{
+	font-size: 35px;
+	font-weight: 500;
+	color: #fff;
+}
+.heart-pred .heart-content p{
+	font-size: 20px;
+	font-weight: 300;
+	color: #fff;
+	
+}
+.heart-label-info{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+.heart-label-info .attribute-info{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+
+}
+.heart-label-info .attribute-info .heart-box{
+	position: relative;
+	padding: 10px 0;
+	display: flex;
+}
+.heart-label-info .attribute-info .heart-box .heart-icon{
+	min-width: 20px;
+	height: 20px;
+	background: #00ffff ;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size: 11px;
+}
+.heart-label-info .attribute-info .heart-box .heart-text{
+	display: flex;
+	margin-left: 20px;
+	font-size: 16px;
+	color: #fff;
+	flex-direction: column;
+	font-weight: 300;
+}
+.heart-label-info .attribute-info .heart-box .heart-text h3{
+	font-weight: 500;
+	color: #00ffff;
+}
+
+
+
+
+
+
+/*---------------------Form Part---------------------*/
+
+.heart-form{
+	width: 60%;
+	padding: 100px;
+	background: #333;
+	margin-left: 100px;
+	margin-top: 70px;
+}
+.heart-form h2{
+	font-size: 20px;
+	
+	font-weight: 600;               /*changes done*/
+	/*padding-top: 20px;*/
+	color: #00ffff
+
+}
+.heart-form .inputBox{
+	position: relative;
+	width: 100%;
+	margin-top: 20px;
+	color: #fff;
+
+}
+.heart-form .inputBox input{
+	width: 110%;
+	padding: 5px 0;
+    
+	font-size: 16px;
+	margin: 10px 0;
+	border: none;
+	border-bottom: 2px solid #00ffff;
+	outline: none;
+	resize: none;
+}
+.heart-form .inputBox input[type='text']{
+	background-color: #333;                       /*creativity*/
+}
+
+.heart-form .inputBox input[type='submit']{
+	width: 110%;
+	background: #00ffff;
+	color: #333;
+	font-weight: 600;	
+	border:none;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 18px;
+
+}
+
+.heart-form .inputBox input, select, textarea{
+    color: #fff;
+}
+
+.heart-form .inputBox text:focus, input:focus {
+    color: #fff;
+}
+.h1pd{
+	color: #fff;
+}
+
+
+
+
+
+
+
+/*working on button at the center*/
+.center-btn{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 15px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.center-btn:hover{         /*adding hover effect on the button*/
+  border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+
+
+.pd{
+	margin-top: 35px;
+	
+}
+
+
+
+
+@media (max-width: 991px)
+{
+	.heart-pred{
+		padding: 50px;
+	}
+	.heart-label-info{
+		flex-direction: column;
+	}
+	.heart-label-info .attribute-info{
+		margin-bottom: 40px;
+	}
+	.heart-label-info .attribute-info,.heart-form
+	{ 
+		width: 110%;
+
+	}
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+	<section class="heart-pred">
+
+		<div class="heart-content">
+			<h2>Predict Diabetes</h2>
+			<p>You can predict Diabetes with an accuracy of 78%</p>
+			<!-- <a href="{{ url_for('diabetesPage') }}"  class="center-btn">Click Here To See Data Visualizations</a> -->
+		</div>
+
+       <!-- Division for label information -->
+		<div class="heart-label-info">
+			<div class="attribute-info">
+
+               <!-- attribute info starts here -->
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Pregnancies</h3>
+						<p>Number of times pregnant</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Glucose</h3>
+						<p>Plasma glucose concentration a 2 hours in an oral glucose tolerance test<br>(eg.148,85,183,89)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Blood Pressure</h3>
+						<p>Diastolic blood pressure<br>(eg.68,110,56,62)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Skin Thickness</h3>
+						<p>Triceps skin fold thickness (mm)<br>(eg.47,38,30,41)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Insulin Level</h3>
+						<p>2-Hour serum insulin<br>(eg.94,168,88,543)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>BMI</h3>
+						<p>Body mass index (weight in kg/(height in m)^2)<br>(eg.23.1, 26.6, 23.3, 28.1)</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>DPF</h3>
+						<p>Diabetes Pedigree Function<br>a function which scores likelihood of diabetes based on family history<br> eg. 0.52</p>
+					</div>
+				</div>
+
+				<div class="heart-box">
+					<div class="heart-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+					<div class="heart-text">
+						<h3>Age</h3>
+						<p>Age in years<br> eg. 34</p>
+					</div>
+				</div>
+
+				
+
+
+			</div>
+
+			<!-- -----------------Form portion------------------->			
+			<div class="heart-form">
+				<form action="{{ url_for('predictDiabetes') }}" method="POST">
+
+					<div class="inputBox">
+						<h2>Pregnancies</h2>
+						<input type="text" name="pregnancies">
+					</div>
+
+					<div class="inputBox">
+						<h2>Glucose</h2>
+						<input type="text" name="glucose" >
+					</div>
+
+					<div class="inputBox">
+						<h2>Blood Pressure</h2>
+						<input type="text" name="bloodpressure" >
+					</div>
+
+					<div class="inputBox">
+						<h2>Skin Thickness</h2>
+						<input type="text" name="skinthickness" >
+					</div>
+
+					<div class="inputBox">
+						<h2>Insulin Level</h2>
+						<input type="text" name="insulin">
+					</div>
+
+					<div class="inputBox">
+						<h2>BMI</h2>
+						<input type="text" name="bmi">
+					</div>
+
+					<div class="inputBox">
+						<h2>DPF</h2>
+						<input type="text" name="dpf">
+					</div>
+
+					<div class="inputBox">
+						<h2>Age</h2>
+						<input type="text" name="age">
+					</div>
+
+					
+
+					
+
+					<div class="inputBox">
+						<input type="submit" value="Predict">
+					</div>
+
+				</form>
+			</div>
+
+
+		</div>
+
+		<div class="pd">
+    	<center>
+    		<h1 style="color: #00ffff">{{ prediction_text }}</h1>
+    		
+    	</center>
+    </div>
+
+
+	</section>
+
+
+
+
+
+</body>
+</html>
